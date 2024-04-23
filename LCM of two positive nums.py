@@ -1,4 +1,5 @@
 import math
 a=int(input("enter num: "))
-c=math.sqrt(a)
+b=int(input("enter 2nd num: "))
+c=math.lcm(a,b)
 print(c)
