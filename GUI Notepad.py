@@ -1,9 +1,9 @@
 from tkinter import *
 root = Tk() 
-root.geometry("350x250") 
+root.geometry("1780x820") 
 root.title("Riju04Th's Notepad") 
 root.minsize(height=250, width=350) 
-root.maxsize(height=250, width=350) 
+root.maxsize(height=1720, width=880) 
 scrollbar = Scrollbar(root)
 scrollbar.pack(side=RIGHT, fill=Y)
 text_info = Text(root, yscrollcommand=scrollbar.set) 
