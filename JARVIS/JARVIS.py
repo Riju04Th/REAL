@@ -24,11 +24,12 @@ def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening...")
-        r.pause_threshold = 0.6
+        r.adjust_for_ambient_noise(source)
+        r.pause_threshold = 0.5
         audio = r.listen(source)
     try:
         print("Recognizing...")    
-        query = r.recognize_google_cloud(audio, language='en-in')
+        query = r.recognize_google(audio, language='en-in')
         print("User said: ", query)
     except Exception as e:
         # print(e)    
