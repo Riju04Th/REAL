@@ -31,11 +31,11 @@ def takeCommand():
     try:
         print("Recognizing...")    
         query = r.recognize_google(audio, language='en-in')
-        return query
     except Exception as e:
         # print(e)    
         print("Say that again please...")  
         return None
+    return query
 if __name__ == "__main__":
     Greetings()
     while True:
