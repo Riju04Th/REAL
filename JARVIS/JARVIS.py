@@ -1,8 +1,9 @@
 import pyttsx3
+import speech_recognition as sr
 import datetime
 import os
 import pyaudio
-import speech_recognition as sr
+
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 # print(voices)
@@ -15,12 +16,12 @@ def wishMe():
     if hour>=0 and hour<12:
         speak("Good Morning!")
     elif hour>=12 and hour<18:
-        speak("Good Afternoon!")   
+        speak("Good Afternoon!")
     else:
-        speak("Good Evening!")  
-    speak("I am Jarvis Sir. Please tell me how may I help you")       
+        speak("Good Evening!")
+    speak("I am Jarvis Sir. Please tell me how may I help you")
 def takeCommand():
-    #It takes microphone input from the user and returns string output
+#It takes microphone input from the user and returns string output
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening...")
@@ -30,12 +31,11 @@ def takeCommand():
     try:
         print("Recognizing...")    
         query = r.recognize_google(audio, language='en-in')
-        print("User said: ", query)
+        return query
     except Exception as e:
         # print(e)    
         print("Say that again please...")  
-        return "None"
-    return query
+        return None
 if __name__ == "__main__":
     wishMe()
     while True:
@@ -45,3 +45,4 @@ if __name__ == "__main__":
             print(songs)
             os.startfile(os.path.join(music_dir, songs[0]))
             print("Playing music")
+ 
