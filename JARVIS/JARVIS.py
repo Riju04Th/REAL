@@ -11,7 +11,7 @@ engine.setProperty('voices', voices[0].id)
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
-def wishMe():
+def Greetings():
     hour = int(datetime.datetime.now().hour)
     if hour>=0 and hour<12:
         speak("Good Morning!")
@@ -37,12 +37,11 @@ def takeCommand():
         print("Say that again please...")  
         return None
 if __name__ == "__main__":
-    wishMe()
+    Greetings()
     while True:
-        if 'play_music' in query:
+        if query == "play_music":
             music_dir = 'C:\\Users\\SUBHASISH ADDYA\\Desktop\\My Python\\Music'
             songs = os.listdir(music_dir)
             print(songs)
             os.startfile(os.path.join(music_dir, songs[0]))
             print("Playing music")
- 
