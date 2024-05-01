@@ -30,16 +30,16 @@ def takeCommand():
         audio = r.listen(source)
     try:
         print("Recognizing...")    
-        query = r.recognize_google(audio, language='en-in')
+        sound = r.recognize_google(audio, language='en-in')
     except Exception as e:
         # print(e)    
         print("Say that again please...")  
         return None
-    return query
+    return sound
 if __name__ == "__main__":
     Greetings()
     while True:
-        if query == "play_music":
+        if sound == "play_music":
             music_dir = 'C:\\Users\\SUBHASISH ADDYA\\Desktop\\Music'
             songs = os.listdir(music_dir)
             print(songs)
