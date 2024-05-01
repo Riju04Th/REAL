@@ -40,8 +40,7 @@ if __name__ == "__main__":
     query = input("enter command: ")
     while True:
         if query == "play_music":
-            music_dir = 'C:\\Users\\SUBHASISH ADDYA\\Desktop\\Music'
+            music_dir = "c:\\Users\\SUBHASISH ADDYA\\Music"
             songs = os.listdir(music_dir)
-            print(songs)
             os.startfile(os.path.join(music_dir, songs[0]))
             print("Playing music")
