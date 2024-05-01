@@ -1,5 +1,5 @@
 import pyttsx3
-import speech_recognition as sr
+# import speech_recognition as sr
 import datetime
 import os
 import pyaudio
@@ -19,24 +19,25 @@ def Greetings():
     else:
         speak("Good Evening!")
     speak("I am Jarvis Sir. Please tell me how may I help you")
-def takeCommand():
-#It takes microphone input from the user and returns string output
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        print("Listening...")
-        r.adjust_for_ambient_noise(source)
-        r.pause_threshold = 0.5
-        audio = r.listen(source)
-    try:
-        print("Recognizing...")    
-        query = r.recognize_google(audio, language='en-in')
-    except Exception as e:
-        # print(e)    
-        print("Say that again please...")  
-        return None
-    return query
+# def takeCommand():
+# #It takes microphone input from the user and returns string output
+#     r = sr.Recognizer()
+#     with sr.Microphone() as source:
+#         print("Listening...")
+#         r.adjust_for_ambient_noise(source)
+#         r.pause_threshold = 0.5
+#         audio = r.listen(source)
+#     try:
+#         print("Recognizing...")    
+#         query = r.recognize_google(audio, language='en-in')
+#     except Exception as e:
+#         # print(e)    
+#         print("Say that again please...")  
+    #     return None
+    # return query
 if __name__ == "__main__":
     Greetings()
+    query = input("enter command: ")
     while True:
         if query == "play_music":
             music_dir = 'C:\\Users\\SUBHASISH ADDYA\\Desktop\\Music'
